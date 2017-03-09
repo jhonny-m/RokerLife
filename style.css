@@ -1,0 +1,78 @@
+html, body, h1, h2, canvas, footer, header,p,section{
+	padding: 0px;
+	margin: 0px;
+}
+
+body{
+	background-color: DarkCyan;
+	font-family:  "Lucida Console", Monaco, monospace;
+}
+
+header{
+	background-color: Lavender;
+	color: Black;
+	margin-top: 0px;
+	margin-bottom: 1px;
+	margin-left: 6px;
+	margin-right: 6px;
+	float:left;
+	border-radius: 5px;
+	border:2px solid Black;
+	box-shadow:5px 5px 5px Black;
+
+	
+}
+header h1{
+	padding-top:5px;
+	padding-left:10px;
+	padding-right: 10px;
+	text-shadow:2px 1px DarkGrey	;
+	border-bottom: 1px solid White;
+}
+header p{
+	padding-top:5px;
+	padding-bottom:1px;
+	padding-left:10px;
+	padding-right: 10px;
+}
+
+
+section{
+	background-color: DarkCyan;
+	color: Black;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:4px;
+	width:760px;
+	padding-bottom:15px;
+	padding-top: 15px;
+	border: 2px solid White;
+}
+
+section canvas{
+	
+	display:Block;
+	margin-left: auto;
+	margin-right: auto;
+	border:1px solid Black;
+}
+
+footer{
+	background-color: White;
+	color: Black;
+	width: 760px;
+	margin-top: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px solid Black;
+	opacity: 1.0;
+}
+footer:hover{
+	opacity:1.0;
+}
+footer p{
+	opacity:1;
+	text-align: center;
+	padding-top:10px;
+}
+
