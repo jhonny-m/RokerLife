@@ -1,75 +1,68 @@
 AnimationLogic= function(){
-	
+
 }
 
 HooverLogic = function(){
-	
+
 }
 
 ClickLogic = function(){
-	
-}
 
-
-CheckState = function(action,personalStats){
-	if(personalStats.hunger == 1 && action != "Eating"){
-		return "Hungry";
-	}
-	if(personalStats.energy ==1 && action != "Sleeping"){
-		return "Tired";
-	}
-	if(personalStats.money < FoodPrice && action != "Eating"){
-		return "Poor";
-	}
-	else{
-		return "Normal";
-	}
 }
 
 SongWritting = function(time,personalStats,musicianStats){
-	musicianStats.songBook.writeSong(musicianStats.songwritting.level, time);
+	var songs = musicianStats.songBook.songsWritten;
+	musicianStats.songBook.writeSong(musicianStats, time);
 	musicianStats.songwritting.gainExperience(time);
-	personalStats.hunger.updateLoss(time);
-	personalStats.energy.updateLoss(time);
+	if ( musicianStats.songBook.songsWritten!= songs){
+		return false;
+	}
+	else {
+		 return true;
+	}
 }
 
 Practicing = function(time,personalStats,musicianStats){
+	var songs = musicianStats.songBook.songsPracticed;
 	musicianStats.songBook.practiceSong(time);
 	musicianStats.musicianship.gainExperience(time);
-	personalStats.hunger.updateLoss(time);
-	personalStats.energy.updateLoss(time);
+	if ( musicianStats.songBook.songsWritten!= songs){
+		return false;
+	}
+	else {
+		 return true;
+	}
 }
-Playing = function(time,personalStats,musicianStats){
-	
+Playing = function(time,personalStats,musicianStats,size){
+	var number =	musicianStats.showBook.showsPlayed;
+	musicianStats.showBook.playShow(size, musicianStats,time);
+	musicianStats.charisma.gainExperience(time);
+	if (number != musicianStats.showBook.showsPlayed){
+		var show = musicianStats.showBook.shows[number];
+		var fameExp= show.audience * show.quality;
+		musicianStats.fame.gainExperience(FameRate*fameExp);
+		return false;
+	}
+	else {
+		return true;
+	}
 }
-Eating = function(time,personalStats,musicianStats){
-	
-}
-Sleeping = function(time,personalStats,musicianStats){
-	
-}
+
 
 PlayerAction = function(time,action,personalStats,musicianStats){
 	switch(action){
 		case "SongWritting":
-			SongWritting(time,personalStats,musicianStats);
+			return SongWritting(time,personalStats,musicianStats);
 			break;
 		case "Practicing":
-			Practicing(time,personalStats,musicianStats);
+			return Practicing(time,personalStats,musicianStats);
 			break;
 		case "Playing":
-			Playing(time,personalStats,musicianStats);
-			break;
-		case "Sleeping":
-			Eating(time,personalStats,musicianStats);
-			break;
-		case "Eating":
-			Sleeping(time,personalStats,musicianStats);
+			return Playing(time,personalStats,musicianStats);
 			break;
 		case "Action":
-			
 			break;
 		default:
-			
+			return true;
 	}
 }

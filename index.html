@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8"> 
-		<title>RockerLife</title>
+		<meta charset="UTF-8">
+		<title>Rocker Life</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="icon" href="img/favicon.png">
 	</head>
 	<body>
 		<header>
-			<h1>Rocker Life</h1>
-			<p>The Rockstar Life Simulator<p>
+			<div class="container">
+				<div id="logo">
+					<h1>Rocker Life</h1>
+					<p>The Rockstar's Life Simulator<p>
+				</div>
+				<nav>
+					<ul>
+						<li><a class="current" href="index.html">Game</a></li>
+						<li><a href="guide.html">Guide</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+
+			</div>
 		</header>
-		<section>
-			<canvas id="gameWindow" width="640" height="480"> </canvas>
+		<section id="gameSection">
+			<div class="container">
+				<canvas id="gameWindow" width="640" height="480"> </canvas>
+			</div>
 		</section>
 		<footer>
-			<p>This game was made by me, 2017 (C)<p>
+			<p>Rocker Life, CopyRight &copy; 2017<p>
 		</footer>
-			<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-			<script src="js/Classes.js"></script> 
-			<script src="js/Player.js"></script> 
-			<script src="js/Scene.js"></script> -->
-		 <script src="js/GlobalVariables.js"></script> 
-		 <script src="js/Logic.js"></script> 
-		 <script src="js/Components.js"></script> 
-		 <script src="js/Classes.js"></script> 
+			<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+		 <script src="js/GlobalVariables.js"></script>
+		 <script src="js/Logic.js"></script>
+		 <script src="js/Components.js"></script>
+		 <script src="js/Classes.js"></script>
+		 <script src="js/Game.js"></script>
 	</body>
 </html>
-
-

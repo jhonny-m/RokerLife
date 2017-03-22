@@ -1,78 +1,101 @@
-html, body, h1, h2, canvas, footer, header,p,section{
+html, body, h1, h2, canvas, footer, header, p, section, ul, li{
 	padding: 0px;
 	margin: 0px;
 }
 
 body{
-	background-color: DarkCyan;
+	background-color: #18121E;
 	font-family:  "Lucida Console", Monaco, monospace;
+	font-size: 15px;
+	height: 100%;
 }
+
+.container{
+	width: 80%;
+	margin: auto;
+	overflow: hidden;
+}
+
+
+/*Header and Navigation */
 
 header{
-	background-color: Lavender;
-	color: Black;
-	margin-top: 0px;
-	margin-bottom: 1px;
-	margin-left: 6px;
-	margin-right: 6px;
-	float:left;
-	border-radius: 5px;
-	border:2px solid Black;
-	box-shadow:5px 5px 5px Black;
+	background-color: #223237;
+	color: #EAC67A;
+	min-height: 50px;
+	border-bottom:#984B43  4px solid;
 
-	
+
+}
+header a{
+	color: #EAC67A;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+header li{
+	display: inline;
+	float: left;
+	padding: 0 20px 0 20px;
+}
+
+header #logo{
+	float: left;
 }
 header h1{
-	padding-top:5px;
+	padding-top:4px;
 	padding-left:10px;
 	padding-right: 10px;
-	text-shadow:2px 1px DarkGrey	;
-	border-bottom: 1px solid White;
+	border-bottom: 1px solid #984B43;
 }
 header p{
-	padding-top:5px;
-	padding-bottom:1px;
+	padding-top:4px;
+	padding-bottom:0;
 	padding-left:10px;
 	padding-right: 10px;
 }
 
-
-section{
-	background-color: DarkCyan;
-	color: Black;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top:4px;
-	width:760px;
-	padding-bottom:15px;
-	padding-top: 15px;
-	border: 2px solid White;
+header nav{
+	margin-top: 25px;
+	float: right;
 }
 
-section canvas{
-	
-	display:Block;
-	margin-left: auto;
-	margin-right: auto;
-	border:1px solid Black;
+header .current{
+	color: #984B43;
+	font-weight: bold;
+}
+
+header a:hover{
+	color: #ffffff;
+	font-weight: bold;
+}
+
+/* Canvas */
+
+#gameSection {
+	min-height: 480px;
+	background-color: #18121E;
+	margin: 0;
+	padding: 0;
+}
+#gameSection canvas{
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	top: 0; left: 0; bottom: 0; right: 0;
 }
 
 footer{
-	background-color: White;
-	color: Black;
-	width: 760px;
-	margin-top: 2px;
-	margin-left: auto;
-	margin-right: auto;
-	border: 2px solid Black;
-	opacity: 1.0;
+	position:absolute;
+	width: 100%;
+	background-color: #223237;
+	color: #EAC67A;
+	border-top: 4px solid #984B43;
+	min-height: 35px;
+	bottom: 0;
 }
-footer:hover{
-	opacity:1.0;
-}
+
 footer p{
 	opacity:1;
 	text-align: center;
 	padding-top:10px;
 }
-
