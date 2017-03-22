@@ -39,7 +39,7 @@ ActionWindow = function(){
 }
 
 
-Scene = function(){
+Scene = function(player, buttons, map){
 	var self = {};
 	self.player = player;
 	self.sceneButtons = buttons;
@@ -75,18 +75,19 @@ GameScreen = function(scene){
 	return self;
 }
 
-Game =  function(player, gameScreen){
+Game =  function(gameScreen){
 	var self = {}
 	self.mouse = Mouse();
-	self.player = player;
 	self.activeScreen = gameScreen;
 	self.canvas= document.getElementById("gameWindow");
-
+	self.timer= Date.now();
 	self.update = function(){
-		self.activeScreen.update();
+		var time = Date.now()-self.timer;
+		self.timer = Date.now();
+		self.activeScreen.update(time,self.mouse);
 	}
 	self.draw = function(){
-		self.activeScreen.draw();
+		self.activeScreen.draw(canvas.getContext("2d"));
 	}
-
+	return self;
 }

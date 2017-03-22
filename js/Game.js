@@ -11,7 +11,7 @@ ctx.fillStyle = yellow;
 ctx.font = "20px Lucida Console"
 ctx.fillText("Rocker Life",width/2-45, height/2-10);
 ctx.fillText("In Development",width/2-70, height/2+10);
-
+//
 
 
 imageLoader= function(sources,array){
@@ -29,10 +29,31 @@ imageLoader= function(sources,array){
 }
 checkLoad = function(){
 	if(loadedAssets==totalAssets){
-		Game= newGame();
+		game= newGame();
 		requestAnimationFrame(GameLoop);
 	}
 	else{
 		setTimeout(checkLoad,50);
 	}
 }
+
+NewGame = function(){
+  var player = Player(100,100,32,80,sprites.player);
+  var buttons = [
+    Button(300,20,90,30,sprites.practice,"Practicing");
+    Button(300,50,90,30,sprites.songwritting,"SongWritting");
+    Button(300,80,90,30,sprites.playing,"Playing");
+  ]
+  var map = 
+  var scene = Scene(player,buttons);
+
+}
+
+GameLoop = function() {
+
+}
+
+
+var sprites;
+var game;
+imageLoader(sources,sprites);

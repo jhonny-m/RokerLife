@@ -35,8 +35,8 @@ var AlertTime = 1500;
 
 var sources={
 	player:"img/PlayerTry.png",
-	playlive:"img/playlive.png",
-	songwritte:"img/SongWritteTable.png",
+	playing:"img/playlive.png",
+	songwritting:"img/SongWritteTable.png",
 	practice:"img/PracticeAmp.png",
 };
 
